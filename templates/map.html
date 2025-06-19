@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Map</title>
+    <style>
+      .top-right-image {
+        position: relative;
+        left: 550px;
+        top: -150px;
+        width: 750px; /* make image bigger */
+        height: auto; /* maintain aspect ratio */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Jackson's Vibe-Based Music Map</h1>
+
+    <form method="get" action="/">
+      <label for="highlight">Type an artist to locate:</label>
+      <input
+        type="text"
+        id="highlight"
+        name="highlight"
+        placeholder="e.g. Nirvana"
+      />
+      <button type="submit">Find</button>
+    </form>
+
+    {% if recommendations %} {% if current_artist %}
+    <p>Showing: <strong>{{ current_artist }}</strong></p>
+    {% endif %}
+    <h2>Recommended Artists</h2>
+    <ul>
+      {% for artist in recommendations %}
+      <li>{{ artist }}</li>
+      {% endfor %}
+    </ul>
+    {% elif current_artist %}
+    <p>No recommendations found for this artist.</p>
+    {% endif %}
+
+    <img
+      src="data:image/png;base64,{{ plot }}"
+      alt="Scatter Plot"
+      class="top-right-image"
+    />
+  </body>
+</html>
