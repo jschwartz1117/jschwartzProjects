@@ -50,7 +50,7 @@ def scatter():
         texts.append(plt.text(x, y, label, fontsize=9))
 
     adjust_text(texts, arrowprops=dict(arrowstyle='->', color='red'))
-    plt.title("Jackson's Vibe-Based Music Map")
+    plt.title("Jackson's Genre Independent Music Map")
     plt.grid(True)
 
     buf = io.BytesIO()

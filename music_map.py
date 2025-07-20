@@ -48,7 +48,7 @@ def plot_map(df, pca_df):
             print("That band/artist is not in my database. Here is the plain map.")
 
     # Add labels for each point and title
-    plt.title('Jackson''s Vibe-Based Music Map')
+    plt.title('Jackson''s Genre Independent Music Map')
     texts = []
     for i, label in enumerate(df.index.tolist()):
         x = pca_df['PC1'].iloc[i]
